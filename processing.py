@@ -41,6 +41,56 @@ test_table = '''
 
 '''
 
+    test_str = '''
+
+
+
+<table>
+<thead>
+<tr>
+<th>Floor</th>
+<th align="right">Existing area (SDP)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td align="right">1,421</td>
+</tr>
+<tr>
+<td>3</td>
+<td align="right">1,468</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="right">1,766</td>
+</tr>
+<tr>
+<td>1</td>
+<td align="right">1,741</td>
+</tr>
+<tr>
+<td>G</td>
+<td align="right">1,763</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td align="right"><strong>8,159</strong></td>
+</tr>
+</tbody>
+</table>
+
+    <table>
+    <tr><th>one</th><th>two</th><th>three</th><th>four</th><th>five</th><th>six</th></tr>
+    <tr><td>text</td><td>8,789</td><td>text</td><td>535,546</td><td>text</td><td>text</td></tr>
+    <tr><td>text</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
+    <tr><td>text</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
+    <tr><td>TOTAL</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
+    </table>
+
+    '''
+
+
 def remove_unused(str):
     return str.replace(' align="right"', '')
 
@@ -236,54 +286,7 @@ def process_html(html_str):
 
 
 if __name__ == "__main__":
-    test_str = '''
 
-
-
-<table>
-<thead>
-<tr>
-<th>Floor</th>
-<th align="right">Existing area (SDP)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4</td>
-<td align="right">1,421</td>
-</tr>
-<tr>
-<td>3</td>
-<td align="right">1,468</td>
-</tr>
-<tr>
-<td>2</td>
-<td align="right">1,766</td>
-</tr>
-<tr>
-<td>1</td>
-<td align="right">1,741</td>
-</tr>
-<tr>
-<td>G</td>
-<td align="right">1,763</td>
-</tr>
-<tr>
-<td><strong>TOTAL</strong></td>
-<td align="right"><strong>8,159</strong></td>
-</tr>
-</tbody>
-</table>
-
-    <table>
-    <tr><th>one</th><th>two</th><th>three</th><th>four</th><th>five</th><th>six</th></tr>
-    <tr><td>text</td><td>8,789</td><td>text</td><td>535,546</td><td>text</td><td>text</td></tr>
-    <tr><td>text</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
-    <tr><td>text</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
-    <tr><td>TOTAL</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
-    </table>
-
-    '''
     # print(tst_is_tag_numeric())
     # print(tst_list_numeric_cols())
     # print(tst_find_val())
@@ -297,27 +300,3 @@ if __name__ == "__main__":
     # print(find_val('<td align="right">17.62</td>', 'td'))
 
 
-    '''
-        
-    <p> some tjns</p>
-    
-    swd
-    
-    wd
-    
-    <table>
-    <tr><th>one</th><th>two</th><th>three</th><th>four</th><th>five</th><th>six</th></tr>
-    <tr><td>text</td><td>8,789</td><td>text</td><td>535,546</td><td>text</td><td>text</td></tr>
-    <tr><td>text</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
-    <tr><td>text</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
-    <tr><td>TOTAL</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
-    </table>
-    <table>
-    <tr><th>one</th><th>two</th><th>three</th><th>four</th><th>five</th><th>six</th></tr>
-    <tr><td>text</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
-    <tr><td>text</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
-    <tr><td>text</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
-    <tr><td>TOTAL/AV</td><td>8789</td><td>text</td><td>text</td><td>text</td><td>text</td></tr>
-    </table>
-    
-    '''
